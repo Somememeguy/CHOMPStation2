@@ -2,8 +2,8 @@
 VIRGO3B_TURF_CREATE(/turf/simulated/open)
 /turf/simulated/open/virgo3b
 	edge_blending_priority = 0.5 //Turfs which also have e_b_p and higher than this will plop decorative edges onto this turf
-/turf/simulated/open/virgo3b/New()
-	..()
+/turf/simulated/open/virgo3b/Initialize(mapload)
+	. = ..()
 	if(outdoors)
 		SSplanets.addTurf(src)
 
@@ -70,7 +70,7 @@ VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 			"platinum" = 10,
 			"hematite" = 20,
 			"copper" = 8,
-			"tin" = 4,
+//			"tin" = 4,
 			"bauxite" = 4,
 			"rutile" = 4,
 			"carbon" = 20,
@@ -87,7 +87,7 @@ VIRGO3B_TURF_CREATE(/turf/simulated/mineral/floor)
 			"platinum" = 5,
 			"hematite" = 35,
 			"copper" = 15,
-			"tin" = 10,
+//			"tin" = 10,
 			"bauxite" = 10,
 			"rutile" = 10,
 			"carbon" = 35,

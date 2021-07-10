@@ -39,7 +39,7 @@
 
 /obj/item/clothing/accessory/proc/get_mob_overlay()
 	if(!istype(loc,/obj/item/clothing/))	//don't need special handling if it's worn as normal item.
-		return ..()
+		return
 	var/tmp_icon_state = "[overlay_state? "[overlay_state]" : "[icon_state]"]"
 	if(ishuman(has_suit.loc))
 		wearer = has_suit.loc
@@ -384,7 +384,7 @@
 	if(!M.mind)
 		return 0
 
-	var/input = sanitizeSafe(input("Who do you want to dedicate the bracelet to?", ,""), MAX_NAME_LEN)
+	var/input = sanitizeSafe(input(usr, "Who do you want to dedicate the bracelet to?", ,""), MAX_NAME_LEN)
 
 	if(src && input && !M.stat && in_range(M,src))
 		desc = "A beautiful friendship bracelet in all the colors of the rainbow. It's dedicated to [input]."
@@ -398,7 +398,7 @@
 /obj/item/clothing/accessory/bracelet/material/New(var/newloc, var/new_material)
 	..(newloc)
 	if(!new_material)
-		new_material = DEFAULT_WALL_MATERIAL
+		new_material = MAT_STEEL
 	material = get_material_by_name(new_material)
 	if(!istype(material))
 		qdel(src)

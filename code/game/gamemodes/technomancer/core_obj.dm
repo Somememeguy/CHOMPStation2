@@ -121,7 +121,7 @@
 			if(L.stat == DEAD)
 				summoned_mobs -= L
 				spawn(1)
-					L.visible_message("<span class='notice'>\The [L] begins to fade away...</span>")
+					L.visible_message("<b>\The [L]</b> begins to fade away...")
 					animate(L, alpha = 255, alpha = 0, time = 30) // Makes them fade into nothingness.
 					sleep(30)
 					qdel(L)
@@ -253,7 +253,7 @@
 	energy = 7000
 	max_energy = 7000
 	regen_rate = 70 //100 seconds to full
-	slowdown = -1
+	slowdown = -0.5
 	instability_modifier = 0.9
 	cooldown_modifier = 0.9
 
@@ -267,7 +267,7 @@
 	energy = 20000
 	max_energy = 20000
 	regen_rate = 25 //800 seconds to full
-	slowdown = 1
+	slowdown = 0.5
 	instability_modifier = 1.0
 	spell_power_modifier = 1.4
 

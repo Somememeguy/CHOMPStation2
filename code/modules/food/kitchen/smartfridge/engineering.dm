@@ -1,13 +1,14 @@
 /obj/machinery/smartfridge/sheets //Is this used anywhere? It's not secure.
 	name = "\improper Smart Sheet Storage"
 	desc = "A storage unit for metals."
-	icon_state = "fridge_dark"
-	icon_base = "fridge_dark"
-	icon_contents = "slime"
+	icon_contents = "boxes"
 	stored_datum_type = /datum/stored_item/stack
 
 /obj/machinery/smartfridge/sheets/persistent
 	persistent = /datum/persistent/storage/smartfridge/sheet_storage
+
+/obj/machinery/smartfridge/sheets/persistent_lossy
+	persistent = /datum/persistent/storage/smartfridge/sheet_storage/lossy
 
 /obj/machinery/smartfridge/sheets/accept_check(var/obj/item/O)
 	return istype(O, /obj/item/stack/material)
